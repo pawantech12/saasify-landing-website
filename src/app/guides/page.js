@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { Mail } from "lucide-react";
+import Image from "next/image";
 
 const guides = [
   {
@@ -92,9 +93,12 @@ const SaaSGuidesPage = () => {
           >
             <Card className="overflow-hidden rounded-xl shadow-lg bg-background dark:bg-muted/10 transition-transform transform hover:scale-[1.02] hover:shadow-xl py-0">
               <div className="relative w-full h-56">
-                <img
+                <Image
                   src={guide.image}
                   alt={guide.title}
+                  layout="fill"
+                  objectFit="cover"
+                  priority
                   className="w-full h-full object-cover rounded-t-xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

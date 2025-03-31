@@ -78,8 +78,8 @@ const CareersPage = () => {
             Join Our Growing SaaS Team
           </h2>
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-            Be part of an innovative team that's building the future of SaaS.
-            Explore open roles and apply today!
+            Be part of an innovative team that&apos;s building the future of
+            SaaS. Explore open roles and apply today!
           </p>
         </motion.div>
 

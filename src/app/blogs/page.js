@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Mail } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const blogs = [
   {
@@ -71,10 +72,13 @@ const BlogPage = () => {
           >
             <Card className="overflow-hidden rounded-xl shadow-lg bg-background dark:bg-muted/10 transition-transform transform hover:scale-[1.02] hover:shadow-xl py-0">
               <div className="relative w-full h-56">
-                <img
+                <Image
                   src={blog.image}
                   alt={blog.title}
-                  className="w-full h-full object-cover rounded-t-xl"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-t-xl"
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
@@ -106,7 +110,7 @@ const BlogPage = () => {
         ))}
       </div>
 
-      <div className="mt-16 flex flex-col items-center border shadow-md bg-white border-gray-200 dark:border-neutral-700 p-10 rounded-lg dark:bg-[#262626]  mx-auto text-center">
+      <div className="mt-16 flex flex-col items-center border shadow-md bg-white border-gray-200 dark:border-neutral-700 p-10 rounded-lg dark:bg-[#262626] mx-auto text-center">
         <Mail className="size-10 text-primary mb-4" />
         <h3 className="text-2xl font-semibold">Subscribe to Our Newsletter</h3>
         <p className="text-muted-foreground mt-2 mb-4">
@@ -118,7 +122,7 @@ const BlogPage = () => {
             placeholder="Enter your email"
             className="flex-1 text-base h-12"
           />
-          <Button className={"h-12 text-base cursor-pointer"}>Subscribe</Button>
+          <Button className="h-12 text-base cursor-pointer">Subscribe</Button>
         </div>
       </div>
     </section>

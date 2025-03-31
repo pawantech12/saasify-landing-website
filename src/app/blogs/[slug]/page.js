@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Facebook, Twitter, Linkedin, Mail, Calendar } from "lucide-react";
@@ -51,18 +52,24 @@ const relatedBlogs = [
 
 const BlogDetails = () => {
   return (
-    <section className="w-full min-h-screen py-20 px-6 md:px-10 bg-muted/30 dark:bg-black flex justify-between gap-8">
-      <div className="w-[70%]">
+    <section className="w-full min-h-screen py-20 px-6 md:px-10 bg-muted/30 dark:bg-black flex justify-between gap-8 max-md:flex-col">
+      <div className="w-[70%] max-md:w-full">
         {/* Hero Section */}
         <div className="relative w-full  mx-auto text-center">
-          <motion.img
-            src={blogPost.image}
-            alt={blogPost.title}
-            className="w-full h-80 object-cover rounded-lg shadow-lg"
+          <motion.div
+            className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-          />
+          >
+            <Image
+              src={blogPost.image}
+              alt={blogPost.title}
+              layout="fill"
+              objectFit="cover"
+              priority
+            />
+          </motion.div>
           <Badge className="absolute top-4 left-4 text-sm px-3 py-1 rounded-full bg-primary text-white">
             {blogPost.category}
           </Badge>
@@ -105,10 +112,12 @@ const BlogDetails = () => {
 
             {/* Comment Input */}
             <div className="flex items-start gap-4">
-              <img
+              <Image
                 src="/user.jpg"
                 alt="User Avatar"
-                className="w-12 h-12 rounded-full border"
+                width={48}
+                height={48}
+                className="rounded-full border"
               />
               <textarea
                 placeholder="Share your thoughts..."
@@ -125,10 +134,12 @@ const BlogDetails = () => {
             {/* Dummy Comments */}
             <div className="mt-6 space-y-4">
               <div className="flex gap-4">
-                <img
+                <Image
                   src="/user.jpg"
                   alt="User Avatar"
-                  className="w-10 h-10 rounded-full border"
+                  width={40}
+                  height={40}
+                  className="rounded-full border"
                 />
                 <div>
                   <h4 className="text-sm font-semibold">John Doe</h4>
@@ -142,10 +153,12 @@ const BlogDetails = () => {
               </div>
 
               <div className="flex gap-4 pl-12">
-                <img
+                <Image
                   src="/user.jpg"
                   alt="User Avatar"
-                  className="w-10 h-10 rounded-full border"
+                  width={40}
+                  height={40}
+                  className="rounded-full border"
                 />
                 <div>
                   <h4 className="text-sm font-semibold">Jane Smith</h4>
@@ -158,7 +171,9 @@ const BlogDetails = () => {
           </div>
         </div>
       </div>
-      <div className="w-[30%]">
+
+      {/* Related Blogs */}
+      <div className="w-[30%] max-md:w-full">
         <h4 className="text-xl font-semibold mb-4">Related Blogs</h4>
         <ul className="space-y-4">
           {relatedBlogs.map((blog, index) => (
