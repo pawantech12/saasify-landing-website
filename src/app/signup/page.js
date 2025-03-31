@@ -34,7 +34,7 @@ export default function SignupPage() {
               Create an Account
             </h2>
             <p className="text-muted-foreground text-center">
-              Join us today! It’s quick and easy.
+              Join us today! It&apos;s quick and easy.
             </p>
 
             {/* Social Login Buttons */}

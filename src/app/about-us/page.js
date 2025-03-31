@@ -98,7 +98,7 @@ export default function AboutPage() {
 
       {/* Call-to-Action */}
       <div className="flex flex-col items-center mt-12">
-        <h3 className="text-3xl font-bold">🚀 Let’s Build Together</h3>
+        <h3 className="text-3xl font-bold">🚀 Let&apos;s Build Together</h3>
         <p className="text-muted-foreground mt-2">
           Partner with us to bring your ideas to life.
         </p>

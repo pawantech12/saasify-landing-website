@@ -25,8 +25,8 @@ const TestimonialSection = () => {
             Loved by Teams Worldwide
           </h2>
           <p className="max-w-[800px] text-muted-foreground md:text-lg">
-            Don't just take our word for it. See what our customers have to say
-            about their experience.
+            Don&apos;t just take our word for it. See what our customers have to
+            say about their experience.
           </p>
         </motion.div>
 
